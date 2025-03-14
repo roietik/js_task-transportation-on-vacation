@@ -8,13 +8,14 @@ function calculateRentalCost(days) {
   const DAILY_RATE = 40;
   const LARGE_DISCOUNT = 50;
   const SMALL_DISCOUNT = 20;
-
-  let total = DAILY_RATE * days;
+  const total = DAILY_RATE * days;
 
   if (days >= 7) {
-    total -= LARGE_DISCOUNT;
-  } else if (days >= 3) {
-    total -= SMALL_DISCOUNT;
+    return total - LARGE_DISCOUNT;
+  }
+
+  if (days >= 3) {
+    return total - SMALL_DISCOUNT;
   }
 
   return total;
